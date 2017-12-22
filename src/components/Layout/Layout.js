@@ -3,7 +3,6 @@ import Auxiliary from '../../hoc/Auxiliary'
 import classes from  './Layout.css'
 
 const Layout = (props) => {
-  console.log(classes)
   return (
     <Auxiliary>
       <div>ToolBar, SlideDrawer, BackDrop</div>
