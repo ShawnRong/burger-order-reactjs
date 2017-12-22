@@ -35,7 +35,10 @@ module.exports = {
                 loader: 'css-loader', 
                 options: { 
                   minimize: true,
-                  url: false
+                  url: false,
+                  //use css module
+                  modules: true,
+                  localIdentName: "[name]__[local]___[hash:base64:5]"  
                 } 
               },
               { 
