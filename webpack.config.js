@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 //autoprefixer
 const autoprefixer = require('autoprefixer')
+const webpack = require('webpack');
+
 
 module.exports = {
   context: path.resolve(process.cwd(), "src"),
@@ -16,8 +18,10 @@ module.exports = {
     contentBase: '.',
     port: 1024,
     // compress: true
+    hot: true,
+    watchContentBase: true
   },
-  watch: true,
+  // watch: true,
   output: {
     publicPath: '/dist',
     path: path.resolve(process.cwd(), "dist"),
@@ -31,20 +35,20 @@ module.exports = {
             fallback: "style-loader",
             //compress css
             use: [
-              { 
-                loader: 'css-loader', 
-                options: { 
+              {
+                loader: 'css-loader',
+                options: {
                   minimize: true,
                   url: false,
                   //use css module
                   modules: true,
-                  localIdentName: "[name]__[local]___[hash:base64:5]"  
-                } 
+                  localIdentName: "[name]__[local]___[hash:base64:5]"
+                }
               },
-              { 
-                loader: 'postcss-loader', 
+              {
+                loader: 'postcss-loader',
                 options: {
-                  ident: 'postcss', 
+                  ident: 'postcss',
                   plugins: () => [autoprefixer]
                 }
               },
@@ -93,5 +97,8 @@ module.exports = {
       allChunks: true,
     }),
     // new UglifyJsPlugin(),
+    new HtmlWebpackPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
