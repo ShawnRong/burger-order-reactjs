@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot --watch-poll"
+    "start": "webpack-dev-server --progress --inline --watch-poll"
   },
   "license": "MIT",
   "devDependencies": {
