@@ -18,6 +18,7 @@ module.exports = {
     contentBase: '.',
     port: 1024,
     // compress: true
+    historyApiFallback: true,
     hot: true,
     watchContentBase: true
   },
