@@ -43,7 +43,7 @@ class Checkout extends Component {
   render() {
     return (
       <div>
-        <CheckoutSummary 
+        <CheckoutSummary
           ingredients={this.state.ingredients}
           checkoutCancelled={this.checkoutCancelledHanlder}
           checkoutContinued={this.checkoutContinuedHandler}
