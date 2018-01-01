@@ -8,7 +8,7 @@ const initialState = {
 
 const reducer = (state=initialState, action) => {
   switch(action.type) {
-    case actionTypes.PURCHASE_BURGER_START: 
+    case actionTypes.PURCHASE_BURGER_START:
       return {
         ...state,
         loading: true
@@ -31,7 +31,7 @@ const reducer = (state=initialState, action) => {
       }
     case actionTypes.PURCHASE_INIT:
       return {
-        ...state,    
+        ...state,
         purchased: false
       }
     case actionTypes.FETCH_ORDERS_START:
